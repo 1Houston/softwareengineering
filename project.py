@@ -14,4 +14,4 @@ prompt = a
 negative_prompt = "low quality, bad quality"
 
 image = pipe(prompt=prompt, negative_prompt=negative_prompt, prior_guidance_scale =1.0, height=768, width=768).images[0]
-image
+image.save("output.png")
