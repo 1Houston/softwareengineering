@@ -6,7 +6,7 @@ from diffusers import AutoPipelineForText2Image
 pipe = AutoPipelineForText2Image.from_pretrained("kandinsky-community/kandinsky-2-2-decoder", torch_dtype=torch.float16)
 pipe = pipe.to("cuda")
 
-inp = str(input())
+inp = str(input("Запрос: "))
 input_ids = tokenizer(inp, return_tensors='pt').input_ids
 outputs = model.generate(input_ids=input_ids)
 a = tokenizer.batch_decode(outputs, skip_special_tokens=True)
